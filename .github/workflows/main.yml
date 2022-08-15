@@ -32,11 +32,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v3
-     - name: Run Tests
-       run: |
-          pip install pytest
-          export PYTHONPATH=App1
-          python manage.py test
+    - name: Run Tests
+      run: |
+        pip install pytest
+        export PYTHONPATH=App1
+        python manage.py test
     - name: Deploy to Heroku
       env:
         HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
