@@ -26,22 +26,21 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        conda env list
 
   deploy:
     runs-on: ubuntu-latest  
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v3
-    - name: Run Tests
-      run: |
-        export PYTHONPATH=App1
-        conda init bash
-        conda activate conda-env
+    # - name: Run Tests
+    #   run: |
+    #     export PYTHONPATH=App1
+    #     conda init bash
+    #     conda activate conda-env
         
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        python manage.py test
+    #     python -m pip install --upgrade pip
+    #     pip install -r requirements.txt
+    #     python manage.py test
     - name: Deploy to Heroku
       env:
         HEROKU_API_TOKEN: ${{ secrets.HEROKU_API_TOKEN }}
