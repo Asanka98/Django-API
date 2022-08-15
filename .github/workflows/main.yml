@@ -37,7 +37,9 @@ jobs:
       run: |
         export PYTHONPATH=App1
         conda init bash
-        # conda activate conda-env
+        conda activate conda-env
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
         python manage.py test
     - name: Deploy to Heroku
       env:
