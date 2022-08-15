@@ -36,6 +36,7 @@ jobs:
     - name: Run Tests
       run: |
         export PYTHONPATH=App1
+        conda init bash
         conda activate venv1
         python manage.py test
     - name: Deploy to Heroku
