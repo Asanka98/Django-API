@@ -36,8 +36,8 @@ jobs:
     - name: Run Tests
       run: |
         export PYTHONPATH=App1
-        conda init 
-        conda activate bash
+        # conda init 
+        conda activate conda-env
         python manage.py test
     - name: Deploy to Heroku
       env:
